@@ -188,10 +188,10 @@ if thingy2 == False:#introduction
   any_key()
   clear()
 
-  sp(f'{italic}Timmy Nook:{reset}{White} Hello {Blue}{username}{White}! Welcome to Nook Inc! It seems like you got a {Green}Nook Ticket!{White} And let me see here...')
+  sp(f'{italic}Timmy:{reset}{White} Hello {Blue}{username}{White}! Welcome to Nook Inc! It seems like you got a {Green}Nook Ticket!{White} And let me see here...')
   time.sleep(2)
   any_key2()
-  sp(f"\n{italic}Tommy Nook:{reset}{White} It says here that it says you have got an invitation to get an {Green}island!{White} So in the meantime, what will your new {Green}Island {White}look like? On another note, we will brainstorm some ideas for you!")
+  sp(f"\n{italic}Tommy:{reset}{White} It says here that it says you have got an invitation to get an {Green}island!{White} So in the meantime, what will your new {Green}Island {White}look like? On another note, we will brainstorm some ideas for you!")
   time.sleep(2)
   any_key2()
   clear()
@@ -437,6 +437,34 @@ if thingy2 == False:#introduction
         clear()
   else:
     if base == True:
+      idk2=True
+      print(f'{Green}You are now at the base... And see three more people! You have a surprised expression, and Timmy and Tommy notice.{White}')
+      time.sleep(2)
+      any_key()
+      sp(f'\n{italic}Tommy:{reset} Ah {Blue}{username}{White}! I see you\'ve seen our visitors!')
+      time.sleep(2)
+      any_key2()
+      yn = input('\n[Y]es! or [N]o...\n> ').lower()
+      #tom_nook_meet=True
+
+      if yn == 'y':
+        sp(f'\n{italic}Timmy:{reset} Yep! This is our boss, {Green}Tom Nook!{White}')
+        time.sleep(2)
+        any_key2()
+      elif yn == 'n':
+        sp(f'\n{italic}Timmy:{reset} Aww, come one {Blue}{username}{White}! Don\'t lie to us! Anyways, meet {Green}Tom Nook!{White}')
+        time.sleep(2)
+        any_key2()
+      else:
+        sp(f'\n{italic}Tommy:{reset} Awww, don\'t say naughty words {Blue}{username}{White}! Anyways, meet {Green}Tom Nook!{White}')
+        time.sleep(2)
+        any_key2()
+    else:
+      pass
+  if idk2 == True:
+    pass
+  else:
+    if base == True:
       print(f'{Green}You are now at the base... And see three more people! You have a surprised expression, and Timmy and Tommy notice.{White}')
       time.sleep(2)
       any_key()
@@ -460,30 +488,6 @@ if thingy2 == False:#introduction
         any_key2()
     else:
       pass
-  if base == True:
-    print(f'{Green}You are now at the base... And see three more people! You have a surprised expression, and Timmy and Tommy notice.{White}')
-    time.sleep(2)
-    any_key()
-    sp(f'\n{italic}Tommy:{reset} Ah {Blue}{username}{White}! I see you\'ver seen our visitors!')
-    time.sleep(2)
-    any_key2()
-    yn = input('\n[Y]es! or [N]o...\n> ').lower()
-    #tom_nook_meet=True
-
-    if yn == 'y':
-      sp(f'\n{italic}Timmy:{reset} Yep! This is our boss, {Green}Tom Nook!{White}')
-      time.sleep(2)
-      any_key2()
-    elif yn == 'n':
-      sp(f'\n{italic}Timmy:{reset} Aww, come one {Blue}{username}{White}! Don\'t lie to us! Anyways, meet {Green}Tom Nook!{White}')
-      time.sleep(2)
-      any_key2()
-    else:
-      sp(f'\n{italic}Tommy:{reset} Awww, don\'t say naughty words {Blue}{username}{White}! Anyways, meet {Green}Tom Nook!{White}')
-      time.sleep(2)
-      any_key2()
-  else:
-    pass
 
   sp(f'{italic}Tom Nook:{reset} Hello young sir/ma\'am! What is your name?')
   time.sleep(1)
@@ -491,7 +495,7 @@ if thingy2 == False:#introduction
   name = input('\n> ')
 
   if name == username:
-    sp(f'\n{italic}Tom Nook:{reset} So {Blue}{username}{White}, welcome! Let us start with the basics of your new home! What will be your new island name? Also-')
+    sp(f'\n{italic}Tom Nook:{reset} So {Blue}{username}{White}, welcome! Let us start with the basics of your new home! What will be your {Green}new island{White} name? Also-')
     time.sleep(2)
     any_key2()
   else:
@@ -508,11 +512,38 @@ if thingy2 == False:#introduction
   island_name2 = random.choice(island_names)
   island_name3 = random.choice(island_names)
   island_name4 = random.choice(island_names)
+  island_name5 = random.choice(island_names)
+  thingy=True
+  while thingy:
+    if island_name1 == island_name2:
+      island_name2=random.choice(island_names)
+    elif island_name1 == island_name3:
+      island_name3=random.choice(island_names)
+    elif island_name1 == island_name4:
+      island_name4=random.choice(island_names)
+    elif island_name1 == island_name5:
+      island_name5=random.choice(island_names)
+    elif island_name2 == island_name3:
+      island_name3=random.choice(island_names)
+    elif island_name2 == island_name4:
+      island_name4=random.choice(island_names)
+    elif island_name2 == island_name5:
+      island_name5=random.choice(island_names)
+    elif island_name3 == island_name4:
+      island_name4=random.choice(island_names)
+    elif island_name3 == island_name5:
+      island_name5=random.choice(island_names)
+    elif island_name4 == island_name5:
+      island_name5=random.choice
+    #this whole blob of if and elif statements check that the names arent the same, a waste of code, right? xd
+    else:
+      thingy=False
+
   while island_name_choose:
-    your_name_island = input("\nWhat is your island name? \nNote: Dont include the 'island'.\n> ")
+    your_name_island = input("What is your island name? \nNote: Dont include the 'island'.\n> ")
     clear()
 
-    sp(f'Is it {Purple}{your_name_island}{White}? Remember, you cant switch it once you\'ve chosen. y/n')
+    sp(f'Is it {Purple}{your_name_island} island{White}? Remember, you cant switch it once you\'ve chosen. y/n')
     yn = input('> ').lower()
     clear()
 
@@ -548,7 +579,20 @@ if thingy2 == False:#introduction
   sp(f'\n{italic}Tom Nook:{reset} Yes, let us vote!')
   time.sleep(1)
   any_key2()
-  sp(f'{italic}Tom Nook:{reset} Also, we have two villagers to stay with us, ')
+  sp(f'{italic}Tom Nook:{reset} Also, we have two villagers to stay with us, {Blue}{villager1}{White} and {Blue}{villager2}{White}! They will be your starting {Green}neighbors{White}, and remember, later on as you get more advanced, you will get more villagers!')
+  time.sleep(2)
+  any_key2()
+  if guest == True:#checks if youre a guest, because if you are, not progress saves.
+    pass#does nothing
+  else:
+    with open('stats.env','a') as stats:
+      stats.write('Number of Villagers: 2\n')
+      stats.close()
+  
+  sp(f'{italic}Tommy:{reset} Lets get started with the poll everyone!')
+  time.sleep(2)
+  any_key2()
+  print(f'\n{italic}Timmy:{reset} {Green}{island_name1} island{White}\n{italic}Tommy:{reset} {Green}{island_name2} island{White}\n{italic}Tom Nook:{reset} {Green}{island_name3} island{White}\n{italic}{villager1}:{reset} {Green}{island_name4} island{White}\n{italic}{villager2}:{reset} {Green}{island_name5} island{White}\n{Blue}{username}:{White} {Green}{your_name_island} island{White}')
   '''
   with open('stats.env','a') as stats:
     stats.write(f'Island Name: {your_name_island}\n')
