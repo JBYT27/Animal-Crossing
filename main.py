@@ -586,15 +586,15 @@ if thingy2 == False:#introduction
     pass#does nothing
   else:
     with open('stats.env','a') as stats:
+      stats.write(f'Name: {username}\n')#i dont neccasrily need this, but just in case
       stats.write('Number of Villagers: 2\n')
       stats.write(f'Island Name: {your_name_island}\n')
+      stats.write(f'Villager names: {villager1} and {villager2}\n')
       stats.close()
   
   sp(f'{italic}Tommy:{reset} Lets get started with the poll everyone!')
   time.sleep(2)
   any_key2()
   print(f'\n{italic}Timmy:{reset} {Green}{island_name1} island{White}\n{italic}Tommy:{reset} {Green}{island_name2} island{White}\n{italic}Tom Nook:{reset} {Green}{island_name3} island{White}\n{italic}{villager1}:{reset} {Green}{island_name4} island{White}\n{italic}{villager2}:{reset} {Green}{island_name5} island{White}\n{Blue}{username}:{White} {Green}{your_name_island} island{White}')
-
-
 else:
   pass
