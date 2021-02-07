@@ -1,4 +1,4 @@
-import os, time, sys, random
+import os, time, sys, random, pickle
 #from replit import db
 from fish import *
 from map import *
@@ -78,7 +78,7 @@ while login_signup:
     username = input('Username\n> ')
     clear()
 
-    with open('username.env','r') as user_read:
+    with open('username.env','r') as user_read:#change to pickle
       reead = user_read.read()
       
       if username in reead:
@@ -109,7 +109,7 @@ while login_signup:
       if yn_user == 'y':
         thingy2=False
         print(f'{Blue}{username}{White}! What a nice name that fits just right!')
-        with open('username.env','a') as user:
+        with open('username.env','a') as user:#change to pickle
           user.write(f'{username}\n')
           user.close()
         time.sleep(2)
@@ -130,7 +130,7 @@ while login_signup:
     elif name_ro == 'r':
       thingy2=False
       print(f'{Blue}{username}{White} it is! What a wonderful name! Welcome to {Green}Animal Crossing {Orange}REPLIT v.1!{White} It seems like you just got a {Green}Nook{White} Ticket to an Island!')
-      with open('username.env','a') as user:
+      with open('username.env','a') as user:#change this to pickle
         user.write(f'{username}\n')
         user.close()
       time.sleep(2)
@@ -323,7 +323,7 @@ if thingy2 == False:#introduction
   time.sleep(1)
   any_key2()
   clear()
-  for i in range(3):
+  for i in range(2):
     printmap(gti1)
     time.sleep(1)
     clear()
@@ -596,5 +596,85 @@ if thingy2 == False:#introduction
   time.sleep(2)
   any_key2()
   print(f'\n{italic}Timmy:{reset} {Green}{island_name1} island{White}\n{italic}Tommy:{reset} {Green}{island_name2} island{White}\n{italic}Tom Nook:{reset} {Green}{island_name3} island{White}\n{italic}{villager1}:{reset} {Green}{island_name4} island{White}\n{italic}{villager2}:{reset} {Green}{island_name5} island{White}\n{Blue}{username}:{White} {Green}{your_name_island} island{White}')
+  time.sleep(2)
+  any_key()
+  sp(f'\n\n{italic}Timmy:{reset} Hmmmm... I like {Blue}{username}{White}\'s island name very much... I would like to vote on {Blue}{username}{White}\'s!')
+  time.sleep(1)
+  any_key2()
+  sp(f'{italic}Tom Nook:{reset} Yes, I agree with {Blue}Timmy{White} as well!')
+  time.sleep(1)
+  any_key2()
+  sp(f'{italic}{villager1} and {villager2}:{reset} Same as us too!')
+  time.sleep(1)
+  any_key2()
+  sp(f'{italic}Tommy:{reset} Well, that leaves me! And I agree with everyone else!')
+  time.sleep(1)
+  any_key2()
+  clear()
+  print(f'{Green}Island name is {your_name_island} island! Hooray! {White}')
+  time.sleep(2)
+  any_key()
+  clear()
+
+  sp(f'{italic}Tom Nook:{reset} Now that we have decided on the island name, lets find set up our home. As of right now though, because we do not have houses...')
+  time.sleep(2)
+  any_key2()
+  sp(f'{italic}Timmy:{reset} We have tents for you! Feel free to set it up where ever you want to! {villager1} and {villager2}, you can set up your tents as well! When you are done-')
+  time.sleep(2)
+  any_key2()
+  sp(f'{italic}Tommy:{reset} -Come back to the {Green}Base{White} for more intructions!')
+  time.sleep(1)
+  any_key2()
+  clear()
+  print(f'{Green}Mission granted: Set up tent!{White}')
+  time.sleep(1)
+  any_key()
+  clear()
+  setting=True
+  while setting:
+    print('Setting up tent:\nNote: Because this is a tent, not your permanent home, place it anywhere it feels right')
+    print('[1] Near the beach\n[2] Near the base\n[3] Near the river\n[4] Near the forest')
+    setup_tent = input('> ')
+    clear()
+
+    if setup_tent == '1':
+      print(f'{Green}You set it up near the beach!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
+      setting=False
+    elif setup_tent == '2':
+      print(f'{Green}You set it up near the base!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
+      setting=False
+    elif setup_tent == '3':
+      print(f'{Green}You set it up near the river!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
+      setting=False
+    elif setup_tent == '4':
+      print(f'{Green}You set it up near the forest!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
+      setting=False
+    else:
+      print(f'{Red}Invalid Choice!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
+  
+  print(f'{Green}Tent Placed!{White}')
+  time.sleep(1)
+  any_key()
+  sp('\nBecause you finished placing your tent, you went back for more instructions...')
+  time.sleep(2)
+  any_key()
+  clear()
+
+  
 else:
   pass
