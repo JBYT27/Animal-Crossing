@@ -76,24 +76,28 @@ while login_signup:
   if ls_menu == '1':
     print('Login Menu:')
     username = input('Username\n> ')
-    clear()
+    try:
+      inputFile = 'username.env'
+      fd = open(inputFile, 'rb')
+      dataset = pickle.load(fd)
+      clear()
 
-    with open('username.env','r') as user_read:#change to pickle
-      reead = user_read.read()
-      
-      if username in reead:
-        user_read.close()
-        print(f'{Green}Valid Username!{White}')
+      if username == dataset:
+        print(f'{Green}Logged in!{White}')
         time.sleep(2)
         any_key()
         clear()
-        login_signup=False
       else:
-        user_read.close()
         print(f'{Red}Invalid Username!{White}')
         time.sleep(2)
         any_key()
         clear()
+
+    except:
+      print(f'{Red}Ran out of input!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
 
   elif ls_menu == '2':
     print(f"Welcome to{Green} Animal Crossing{Orange} REPLIT v.1 {Blue}{username}!{White} Would you like your current {Orange}REPL{White} username or would you like your own? {pink_back}r/o{reset}{White}")
@@ -109,17 +113,21 @@ while login_signup:
       if yn_user == 'y':
         thingy2=False
         print(f'{Blue}{username}{White}! What a nice name that fits just right!')
-        with open('username.env','a') as user:#change to pickle
-          user.write(f'{username}\n')
-          user.close()
+        dataset = username
+        outputFile = 'username.env'
+        fw = open(outputFile, 'wb')
+        pickle.dump(dataset, fw)
+        fw.close()
         time.sleep(2)
         any_key()
-        login_signup=False
+        clear()
+
       elif yn_user == 'n':
         print(Green+'Ok then, lets try again!'+White)
         time.sleep(2)
         any_key()
         clear()
+
       else:
         clear()
         print(f'{Red}Invalid Choice, try again!{White}')
@@ -130,9 +138,11 @@ while login_signup:
     elif name_ro == 'r':
       thingy2=False
       print(f'{Blue}{username}{White} it is! What a wonderful name! Welcome to {Green}Animal Crossing {Orange}REPLIT v.1!{White} It seems like you just got a {Green}Nook{White} Ticket to an Island!')
-      with open('username.env','a') as user:#change this to pickle
-        user.write(f'{username}\n')
-        user.close()
+      dataset = username
+      outputFile = 'username.env'
+      fw = open(outputFile, 'wb')
+      pickle.dump(dataset, fw)
+      fw.close()
       time.sleep(2)
       any_key()
       clear()
@@ -236,6 +246,11 @@ if thingy2 == False:#introduction
         any_key()
         clear()
         island_shape=False
+        dataset = a
+        outputFile = 'map.env'
+        fw = open(outputFile, 'wb')
+        pickle.dump(dataset, fw)
+        fw.close()
       elif yn == 'n':
         print(Red+'Lets choose a different one then!'+White)
         time.sleep(2)
@@ -256,6 +271,11 @@ if thingy2 == False:#introduction
         any_key()
         clear()
         island_shape=False
+        dataset = b
+        outputFile = 'map.env'
+        fw = open(outputFile, 'wb')
+        pickle.dump(dataset, fw)
+        fw.close()
       elif yn == 'n':
         print(Red+'Lets choose a different one then!'+White)
         time.sleep(2)
@@ -276,6 +296,11 @@ if thingy2 == False:#introduction
         any_key()
         clear()
         island_shape=False
+        dataset = c
+        outputFile = 'map.env'
+        fw = open(outputFile, 'wb')
+        pickle.dump(dataset, fw)
+        fw.close()
       elif yn == 'n':
         print(Red+'Lets choose a different one then!'+White)
         time.sleep(2)
@@ -296,6 +321,11 @@ if thingy2 == False:#introduction
         any_key()
         clear()
         island_shape=False
+        dataset = d
+        outputFile = 'map.env'
+        fw = open(outputFile, 'wb')
+        pickle.dump(dataset, fw)
+        fw.close()
       elif yn == 'n':
         print(Red+'Lets choose a different one then!'+White)
         time.sleep(2)
@@ -585,12 +615,11 @@ if thingy2 == False:#introduction
   if guest == True:#checks if youre a guest, because if you are, not progress saves.
     pass#does nothing
   else:
-    with open('stats.env','a') as stats:
-      stats.write(f'Name: {username}\n')#i dont neccasrily need this, but just in case
-      stats.write('Number of Villagers: 2\n')
-      stats.write(f'Island Name: {your_name_island}\n')
-      stats.write(f'Villager names: {villager1} and {villager2}\n')
-      stats.close()
+    dataset = f'Number of villagers: 2\nIsland Name: {your_name_island}\nVillager Names: {villager1} and {villager2}'#later on, add more to this
+    outputFile = 'stats.env'
+    fw = open(outputFile, 'wb')
+    pickle.dump(dataset, fw)
+    fw.close()
   
   sp(f'{italic}Tommy:{reset} Lets get started with the poll everyone!')
   time.sleep(2)
@@ -643,24 +672,44 @@ if thingy2 == False:#introduction
       any_key()
       clear()
       setting=False
+      dataset = 'Tent: Near beach'
+      outputFile = 'tent.env'
+      fw = open(outputFile, 'wb')
+      pickle.dump(dataset, fw)
+      fw.close()
     elif setup_tent == '2':
       print(f'{Green}You set it up near the base!{White}')
       time.sleep(2)
       any_key()
       clear()
       setting=False
+      dataset = 'Tent: Near base'
+      outputFile = 'tent.env'
+      fw = open(outputFile, 'wb')
+      pickle.dump(dataset, fw)
+      fw.close()
     elif setup_tent == '3':
       print(f'{Green}You set it up near the river!{White}')
       time.sleep(2)
       any_key()
       clear()
       setting=False
+      dataset = 'Tent: Near river'
+      outputFile = 'tent.env'
+      fw = open(outputFile, 'wb')
+      pickle.dump(dataset, fw)
+      fw.close()
     elif setup_tent == '4':
       print(f'{Green}You set it up near the forest!{White}')
       time.sleep(2)
       any_key()
       clear()
       setting=False
+      dataset = 'Tent: Near forest'
+      outputFile = 'tent.env'
+      fw = open(outputFile, 'wb')
+      pickle.dump(dataset, fw)
+      fw.close()
     else:
       print(f'{Red}Invalid Choice!{White}')
       time.sleep(2)
@@ -674,7 +723,178 @@ if thingy2 == False:#introduction
   time.sleep(2)
   any_key()
   clear()
+  tentplacing=['Near the Beach','Near the Base','Near the River','Near the Forest']
+  idk3=True
+  while idk3:
+    tentplace1=random.choice(tentplacing)
+    tentplace2=random.choice(tentplacing)
+    if tentplace1 == tentplace2:
+      tentplace2=random.choice(tentplacing)
+    else:
+      idk3=False
+  sp(f'{italic}Tom Nook:{reset} Ah {Blue}{username}{White}! I see you\'ve set up your tent! How about you help {villager1} and {villager2} set up their tents? Go {tentplace1} and {tentplace2} to find them!')
+  time.sleep(2)
+  any_key2()
+  clear()
+  print(f'{Green}Go Help {villager1} and {villager2} set up their tents!{White}')
+  time.sleep(2)
+  any_key()
+  clear()
+  thingy=True
+  while thingy:
+    go = input(f'Will you go {tentplace1} or {tentplace2}?\nNote: Enter the exact statement\n> ')
+    clear()
 
+    if go == tentplace1:
+      thingy=False
+      print(f'{Green}You went to help {villager1}!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
+      sp(f'{italic}{villager1}:{reset} Oh! Hello {Blue}{username}{White}! I need some help setting up my tent... Should I set it up here or somewhere else?')
+      time.sleep(2)
+      any_key2()
+      yn=input('y/n\n> ').lower()
+
+      if yn == 'y':
+        sp(f'{italic}{villager1}:{reset} Really? Thanks for helping me {Blue}{username}{White}! I\'m gonna go back to the base now!')
+        time.sleep(2)
+        any_key()
+        clear()
+      elif yn == 'n':
+        sp(f'{italic}{villager1}:{reset} Hmmm, where should I put it then?')
+        time.sleep(1)
+        any_key2()
+        idk=True
+        while idk:
+          print('NTB(near the beach)/NTF(near the forest)/NTB2(near the base)/NTR(near the river)')
+          f = input('> ')
+          clear()
+
+          if f == 'NTB':
+            sp(f'{italic}{villager1}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTB2':
+            sp(f'{italic}{villager1}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTR':
+            sp(f'{italic}{villager1}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTF':
+            sp(f'{italic}{villager1}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          else:
+            print(f'{Red}Invalid Choice!{White}')
+            time.sleep(2)
+            any_key()
+            clear()
+
+    elif go == tentplace2:
+      thingy=False
+      print(f'{Green}You went to help {villager2}!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
+      sp(f'{italic}{villager2}:{reset} Oh! Hello {Blue}{username}{White}! I need some help setting up my tent... Should I set it up here or somewhere else?')
+      time.sleep(2)
+      any_key2()
+      yn=input('y/n\n> ').lower()
+
+      if yn == 'y':
+        sp(f'{italic}{villager2}:{reset} Really? Thanks for helping me {Blue}{username}{White}! I\'m gonna go back to the base now!')
+        time.sleep(2)
+        any_key()
+        clear()
+      elif yn == 'n':
+        sp(f'{italic}{villager2}:{reset} Hmmm, where should I put it then?')
+        time.sleep(1)
+        any_key2()
+        idk=True
+        while idk:
+          print('NTB(near the beach)/NTF(near the forest)/NTB2(near the base)/NTR(near the river)')
+          f = input('> ')
+          clear()
+
+          if f == 'NTB':
+            sp(f'{italic}{villager2}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTB2':
+            sp(f'{italic}{villager2}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTR':
+            sp(f'{italic}{villager2}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTF':
+            sp(f'{italic}{villager2}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          else:
+            print(f'{Red}Invalid Choice!{White}')
+            time.sleep(2)
+            any_key()
+            clear()
+
+    else:
+      print(f'{Red}Invalid Choice!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
+  
+  sp(f'{italic}Tom Nook:{reset} I see you\'ve helped {villager1} and {villager2} with their tents! Nice job! Let\'s move on to the next step -')
+  time.sleep(1)
+  any_key2()
+  sp(f'{italic}Tommy:{reset} -Food! YES!')
+  time.sleep(1)
+  any_key2()
+  sp(f'{italic}Tom Nook:{reset} Yes {Blue}{username}{White}, food! It seems like there are some apple trees as well as tree branches... Would you get {Green}6 apples and 10 branches!{White}')
+  time.sleep(2)
+  any_key()
+  clear()
+  print(f'{Green}Mission Granted: Get 6 apples and 10 branches!{White}')
+  time.sleep(1)
+  any_key()
+  clear()
+
+  thingy=True
+  while thingy:
+    print('What will you do:\n[1] Get apples\n[2] Get branches')
+    ot = input('> ')
+    clear()
+    if ot == '1':
+      pass
+    
+    elif ot == '2':
+      pass
+    
+    else:
+      pass
   
 else:
-  pass
+  inputFile = 'thingy.env'
+  fd = open(inputFile, 'rb')
+  dataset = pickle.load(fd)
+  #add more data things
+
+  if dataset == '':
+    pass
+  
+  elif dataset == '':
+    pass
+
+  else:
+    pass
