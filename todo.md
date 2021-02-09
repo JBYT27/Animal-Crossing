@@ -5,10 +5,10 @@
 + [x] Island maps
 + [x] Villagers
 + [x] Username saving
-+ [x] 
++ [x] Exit/Save
 
 ## Not Done:
 + [ ] Story
 + [ ] Fishing
 + [ ] Pickle Saving
-+ [ ] 
++ [ ] Re-login AND save

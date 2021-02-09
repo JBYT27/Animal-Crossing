@@ -6,14 +6,6 @@ from map import *
 def clear():
   os.system('clear')
 
-def any_key():
-      print(Orange+'\n\n<NEXT>\t[Press any KEY to continue]')
-      input(White)
-
-def any_key2():
-  print(Orange+'\n<NEXT>\t[Press any KEY to continue]')
-  input(White)
-
 st = 0.04
 def sp(str):
   for letter in str:
@@ -48,6 +40,14 @@ invisible='\033[08m'
 reverse='\033[07m'
 reset='\033[0m'
 grey = "\x1b[90m"
+
+def any_key():
+      print(Orange+'\n\n<NEXT>\t[Press any KEY to continue]')
+      input(White)
+
+def any_key2():
+  print(Orange+'\n<NEXT>\t[Press any KEY to continue]')
+  input(White)
 
 def printmap(themap):
   for i in themap:
@@ -245,11 +245,11 @@ if thingy2 == False:#introduction
         time.sleep(2)
         any_key()
         clear()
+        A=True
         island_shape=False
         if guest == True:
           pass
         else:
-          A=True
           dataset = a
           outputFile = 'map.env'
           fw = open(outputFile, 'wb')
@@ -274,11 +274,11 @@ if thingy2 == False:#introduction
         time.sleep(2)
         any_key()
         clear()
+        B=True
         island_shape=False
         if guest == True:
           pass
         else:
-          B=True
           dataset = b
           outputFile = 'map.env'
           fw = open(outputFile, 'wb')
@@ -304,10 +304,10 @@ if thingy2 == False:#introduction
         any_key()
         clear()
         island_shape=False
+        C=True
         if guest == True:
           pass
         else:
-          C=True
           dataset = c
           outputFile = 'map.env'
           fw = open(outputFile, 'wb')
@@ -332,11 +332,11 @@ if thingy2 == False:#introduction
         time.sleep(2)
         any_key()
         clear()
+        D=True
         island_shape=False
         if guest == True:
           pass
         else:
-          D=True
           dataset = d
           outputFile = 'map.env'
           fw = open(outputFile, 'wb')
@@ -841,6 +841,56 @@ if thingy2 == False:#introduction
             any_key()
             clear()
 
+      print(f'{Green}You went to help {villager2}!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
+      sp(f'{italic}{villager2}:{reset} Oh! Hello {Blue}{username}{White}! I need some help setting up my tent... Should I set it up here or somewhere else?')
+      time.sleep(2)
+      any_key2()
+      yn=input('y/n\n> ').lower()
+
+      if yn == 'y':
+        sp(f'{italic}{villager2}:{reset} Really? Thanks for helping me {Blue}{username}{White}! I\'m gonna go back to the base now!')
+        time.sleep(2)
+        any_key()
+        clear()
+      elif yn == 'n':
+        sp(f'{italic}{villager2}:{reset} Hmmm, where should I put it then?')
+        time.sleep(1)
+        any_key2()
+        idk3=True
+        while idk3:
+          print('NTB(near the beach)/NTF(near the forest)/NTB2(near the base)/NTR(near the river)')
+          f = input('> ')
+          clear()
+
+          if f == 'NTB':
+            sp(f'{italic}{villager2}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTB2':
+            sp(f'{italic}{villager2}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTR':
+            sp(f'{italic}{villager2}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTF':
+            sp(f'{italic}{villager2}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          else:
+            print(f'{Red}Invalid Choice!{White}')
+            time.sleep(2)
+            any_key()
+            clear()    
+
     elif go == tentplace2:
       thingy=False
       print(f'{Green}You went to help {villager2}!{White}')
@@ -892,6 +942,56 @@ if thingy2 == False:#introduction
             time.sleep(2)
             any_key()
             clear()
+      
+      print(f'{Green}You went to help {villager1}!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
+      sp(f'{italic}{villager1}:{reset} Oh! Hello {Blue}{username}{White}! I need some help setting up my tent... Should I set it up here or somewhere else?')
+      time.sleep(2)
+      any_key2()
+      yn=input('y/n\n> ').lower()
+
+      if yn == 'y':
+        sp(f'{italic}{villager1}:{reset} Really? Thanks for helping me {Blue}{username}{White}! I\'m gonna go back to the base now!')
+        time.sleep(2)
+        any_key()
+        clear()
+      elif yn == 'n':
+        sp(f'{italic}{villager1}:{reset} Hmmm, where should I put it then?')
+        time.sleep(1)
+        any_key2()
+        idk3=True
+        while idk3:
+          print('NTB(near the beach)/NTF(near the forest)/NTB2(near the base)/NTR(near the river)')
+          f = input('> ')
+          clear()
+
+          if f == 'NTB':
+            sp(f'{italic}{villager1}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTB2':
+            sp(f'{italic}{villager1}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTR':
+            sp(f'{italic}{villager1}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          elif f == 'NTF':
+            sp(f'{italic}{villager1}:{reset} Ok then! Thanks {Blue}{username}{White}!')
+            time.sleep(2)
+            any_key()
+            clear()
+          else:
+            print(f'{Red}Invalid Choice!{White}')
+            time.sleep(2)
+            any_key()
+            clear()
 
     else:
       print(f'{Red}Invalid Choice!{White}')
@@ -905,7 +1005,7 @@ if thingy2 == False:#introduction
   sp(f'{italic}Tommy:{reset} -Food! YES!')
   time.sleep(1)
   any_key2()
-  sp(f'{italic}Tom Nook:{reset} Yes {Blue}{username}{White}, food! It seems like there are some apple trees as well as tree branches... Would you get {Green}6 apples and 10 branches!{White}')
+  sp(f'{italic}Tom Nook:{reset} Yes {Blue}{username}{White}, food! It seems like there are some apple trees as well as tree branches... Would you get {Green}6 apples and 10 branches?{White}')
   time.sleep(2)
   any_key()
   clear()
@@ -928,11 +1028,11 @@ if thingy2 == False:#introduction
       print('You looked across the small meadow, and looked for apples!')
       time.sleep(1)
       any_key()
-      print(f'{Green}You successfully found 6 apples!')
+      print(f'{Green}You successfully found 6 apples!{White}')
       time.sleep(1)
       any_key()
       clear()
-      print(f'Now you went looking for branches!{White}')
+      print(f'{Green}Now you went looking for branches!{White}')
       time.sleep(1)
       any_key()
       clear()
@@ -971,7 +1071,7 @@ if thingy2 == False:#introduction
       time.sleep(1)
       any_key()
       clear()
-      print(f'Now you went looking for apples!{White}')
+      print(f'{Green}Now you went looking for apples!{White}')
       time.sleep(1)
       any_key()
       clear()
@@ -1005,10 +1105,10 @@ if thingy2 == False:#introduction
   time.sleep(1)
   any_key2()
   clear()
-  print(f'{Green}Your group made apple juice!')
+  print(f'{Green}Your group made apple juice!{White}')
   time.sleep(1)
   any_key()
-  print(f'You toasted to your island!{White}')
+  print(f'{Green}You toasted to your island!{White}')
   time.sleep(1)
   any_key()
   clear()
@@ -1025,7 +1125,7 @@ if thingy2 == False:#introduction
   time.sleep(1)
   any_key2()
   clear()
-  sp(f'{Green}You went in your tent because you were sleepy...\nYou also set up your things the simple way, as you are too tired to do nothing but sleep...\nHowever, as you take out the radio, you here D.J. K.K!')
+  sp(f'{Green}You went in your tent because you were sleepy...\nYou also set up your things the simple way, as you are too tired to do nothing but sleep...\nHowever, as you take out the radio, you here D.J. K.K!{White}')
   time.sleep(1)
   sp(f'{italic}DJ KK:{reset} Cool. Settle back and dig this groove. {italic}Main music theme plays as you fall asleep...{reset}')#idk if these are exact words, but here goes
   time.sleep(2)
@@ -1058,7 +1158,7 @@ if thingy2 == False:#introduction
   if guest == True:
     pass
   else:
-    dataset = 'Number of villagers: 2\nIsland Name: {your_name_island}\nVillager Names: {villager1} and {villager2}\nItems: NookPhone,'
+    dataset = f'Number of villagers: 2\nIsland Name: {your_name_island}\nVillager Names: {villager1} and {villager2}\nItems: NookPhone,'
     outputFile = 'stats.env'
     fw = open(outputFile, 'wb')
     pickle.dump(dataset, fw)
@@ -1080,12 +1180,12 @@ if thingy2 == False:#introduction
   clear()
   idk=True
   while idk:
-    print('Will you explore your phone or go back to the base?NP/b')
+    print('Will you explore your phone or go back to the base? NP/b')
     npb = input('> ').lower()
     clear()
 
     if npb == 'np':
-      print(f'{Green}Your exploring your phone!{White}')
+      print(f'{Green}You are exploring your phone!{White}')
       time.sleep(2)
       any_key()
       clear()
@@ -1096,7 +1196,7 @@ if thingy2 == False:#introduction
         clear()
 
         if hrmm == 'help':
-          print('\nHELP - Assistance\nEXIT - Exit out of phone\nCUR - Your balance\nMAP - Take a look at the map\nMore coming soon!')
+          print('HELP - Assistance\nEXIT - Exit out of phone\nCUR - Your balance\nMAP - Take a look at the map\nMore coming soon!')
           time.sleep(2)
           any_key()
           clear()
@@ -1225,10 +1325,13 @@ if thingy2 == False:#introduction
             clear()
 
             if yn == 'y':
-              pass
+              exit('Ok then! Bye!')  
+              inputFile = 'thingy.env'
+              fd = open(inputFile, 'rb')
+              dataset = pickle.clear(fd)
             
             elif yn == 'n':
-              pass
+              hehe=False
             
             else:
               print(f'{Red}Invalid Choice!{White}')
@@ -1237,7 +1340,27 @@ if thingy2 == False:#introduction
               clear()
         
         elif heh == '2':
-          pass
+          hehe = True
+          while hehe:
+            print('Are you sure? y/n')
+            yn = input('> ').lower()
+            clear()
+
+            if yn == 'y':
+              print(f'{Green}Done! Bai!')
+              time.sleep(2)
+              any_key()
+              clear()
+              exit()
+
+            elif yn == 'n':
+              hehe=False
+            
+            else:
+              print(f'{Red}Invalid Choice{White}')
+              time.sleep(2)
+              any_key()
+              clear()
         
         elif heh == '3':
           menu=False
@@ -1254,14 +1377,128 @@ if thingy2 == False:#introduction
       time.sleep(2)
       any_key()
       clear()
+
+  sp(f'{italic}Tom Nook:{reset} I see you\'ve gathered the materials {Blue}{username}{White}! Lets get started at the workshop!')
+  time.sleep(2)
+  any_key()
+  clear()
+  sp(f'You went to the {Green}Workshop!{White}')
+  time.sleep(1)
+  any_key()
+  clear()
+  sp(f'{italic}Tom Nook:{reset} Lets start up the workshop again!')
+  time.sleep(1)
+  any_key()
+  clear()
+  workshop=True
+  while workshop:
+    print('Workshop:')
+    print('[1] Flimsy Fishing Rod\n[2] ???\n[3] ???')
+    ws = input('> ')
+    clear()
+
+    if ws == '1':
+      workshop=False
+      idk98=True
+      while idk98:
+        print(f'Flimsy Fishing Rod:\nMaterials: 5x tree branches\nNote: Enter build\n{Green}<Build>{White}')
+        buildffr = input('> ').lower()
+        clear()
+
+        if buildffr == 'build':
+          idk98=False
+          print(f'{Green}You built the {Orange}Flimsy Fishing Rod!{White}')
+          time.sleep(1)
+          any_key()
+          clear()
+          sp(f'{italic}Tom Nook:{reset} You\'ve built it {Blue}{username}{White}! Just remember, it breaks when you catch 10 things! Go try it out now!')
+          time.sleep(2)
+          any_key()
+          clear()
+        
+        else:
+          print(f'{Red}Invalid Choice!{White}')
+          time.sleep(2)
+          any_key()
+          clear()
+
+      else:
+        print(f'{Red}Invalid Choice or locked!{White}')
+        time.sleep(2)
+        any_key()
+        clear()
+  
+  print(f'{Green}You got a Flimsy Fishing Rod!{White}')
+  time.sleep(2)
+  any_key()
+  clear()
+  if guest == True:
+    pass
+  else:
+    dataset = f'Number of villagers: 2\nIsland Name: {your_name_island}\nVillager Names: {villager1} and {villager2}\nItems: NookPhone, Flimsy Fishing Rod,'
+    outputFile = 'stats.env'
+    fw = open(outputFile, 'wb')
+    pickle.dump(dataset, fw)
+    fw.close()
+  
+  idk43=True
+  while idk43:
+    print('Fishing Menu:')
+    print('[1] Ocean\n[2] River\n[3] Lake')
+    fisht = input('> ')
+
+    if fisht == '1':
+      idk43=False
+      print(f'{Green}You decided to fish in the Ocean!{White}')
+      time.sleep(1)
+      any_key()
+      clear()
+      ofish = ['']#ocean fish
+      fishing=True
+      while fishing:
+        OFISH=random.choice(ofish)
+        print('Ocean Fishing:')
+        print('Press ENTER to fish and enter BACK to exit out of fishing')
+        p = input('> ').lower()
+
+        if p == '':
+          pass
+        
+        elif p == 'back':
+          fishing=False
+        
+        else:
+          pass#same as fishing(pressing enter)
+
+    elif fisht == '2':
+      idk43 = False
+      print(f'{Green}You decided to fish in the River!{White}')
+      time.sleep(1)
+      any_key()
+      clear()
+      rfish = ['']#river fish
+
+    elif fisht == '3':
+      idk43 = False
+      print(f'{Green}You decided to fish in the Lake!{White}')
+      time.sleep(1)
+      any_key()
+      clear()
+      lfish = ['']#lake fish
+    
+    else:
+      print(f'{Red}Invalid Choice!{White}')
+      time.sleep(2)
+      any_key()
+      clear()
   
 else:
   inputFile = 'thingy.env'
   fd = open(inputFile, 'rb')
   dataset = pickle.load(fd)
-  #add more data things
+  #add more data things-done
   idk=True
-  while idk:
+  while idk:#not in order btw
 
     if dataset == 'Meets DJ KK and sleeps':
       pass
