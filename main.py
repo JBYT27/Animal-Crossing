@@ -1,6 +1,5 @@
 import os, time, sys, random, pickle
 #from replit import db
-from fish import *
 from map import *
 
 def clear():
@@ -74,6 +73,7 @@ while login_signup:
   clear()
 
   if ls_menu == '1':
+    guest=False
     print('Login Menu:')
     username = input('Username\n> ')
     try:
@@ -100,6 +100,7 @@ while login_signup:
       clear()
 
   elif ls_menu == '2':
+    guest=False
     print(f"Welcome to{Green} Animal Crossing{Orange} REPLIT v.1 {Blue}{username}!{White} Would you like your current {Orange}REPL{White} username or would you like your own? {pink_back}r/o{reset}{White}")
     name_ro=input('> ').lower()
     clear()
@@ -1453,7 +1454,7 @@ if thingy2 == False:#introduction
       time.sleep(1)
       any_key()
       clear()
-      ofish = ['']#ocean fish
+      ofish = ['Sea Butterfly','Sea Horse','Clown Fish','Butterfly Fish','Surgeonfish','Zebra Turkeyfish','Napoleonfish','Blowfish','Puffer Fish','Anchovy','Horse Mackerel','Sea Bass','Barred Knifejaw','Red Snapper','Dab','Olive Flounder','Squid','Moray Eel','Ribbon Eel','Ocean Sunfish','Ray','Saw Shark','Hammerhead Shark','Great White Shark','Whale Shark','Suckerfish','Football Fish','Oarfish','Barreleye','Coelacanth']#ocean fish
       fishing=True
       while fishing:
         OFISH=random.choice(ofish)
@@ -1476,7 +1477,7 @@ if thingy2 == False:#introduction
       time.sleep(1)
       any_key()
       clear()
-      rfish = ['']#river fish
+      rfish = ['Bitterling','Pale Chub','Crucian Carp','Dace','Soft-shelled Turtle','Snapping Turtle','Freshwater Goby','Loach','Bluegill','Yellow Perch','Black Bass','Tilapia','Pike','Sweetfish','Cherry Salmon','Char','Golden Trout','String Fish','Salmon','King Salmon','Mitten Crab','Guppy','Nibble Fish','Angel Fish','Betta','Neon Tetra','Rainbowfish','Piranha','Arowana','Dorado','Arapaima','Saddled Bichir','Sturgeon']#river fish
 
     elif fisht == '3':
       idk43 = False
