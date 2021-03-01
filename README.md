@@ -32,4 +32,7 @@
 ## Conclusion:
 #### I hope you guys like this! sry i was rly inactive on talk, i was working on this, and i was pretty busy. I might post Beta a few weeks or months later. I'll keep you guys notified! Cya! ;D
 --- 
-> **Note: Don't ask for editing access, pls fork it! Thanks!**
+**Note: Don't ask for editing access, pls fork it! Thanks!**
+
+
+[Run on repl.it](https://repl.it/@darkdarcool/Animal-Crossing-FORK)
